@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="logo">
+            <img src="./assets/logo 1.svg" alt="" srcset="">
+        </div>
+
+        <div class="nav-icons">
+            <img src="./assets/home.svg" alt="" srcset="">
+            <img src="./assets/setting.svg" alt="" srcset="">
+            <img src="./assets/bell.svg" alt="" srcset="">
+            <img src="./assets/profile.png" alt="" srcset="">
+            <img class="dots" src="./assets/dots.svg" alt="" srcset="">
+        </div>
+
+    </nav>
+
+    <!-- ------------------------------ -->
+
+    <main>
+
+        <!-- JOURNEY BOARD 1 -->
+        <div class="journey-board journey-board1">
+            <div><img onclick="handleOut()" src="./assets/journeyIcon.svg" alt=""></div>
+            <div><button><span>1</span></button></div>
+        </div>
+
+        <!-- JOURNEY BOARD 2 -->
+        <div class="journey-board journey-board2">
+            <div><img onclick="handleIn()" src="./assets/journeyIcon.svg" alt=""></div>
+            <div>
+                <h2>Explore the world of management</h2>
+                <ul>
+                    <li>
+                        <img src="./assets/blackDots.svg" alt="" srcset="">
+                        <span>Techincal Project Management</span>
+                    </li>
+                    <li>
+                        <img src="./assets/blackDots.svg" alt="" srcset="">
+                        <span>Thread Build</span>
+                    </li>
+                    <li>
+                        <img src="./assets/blackDots.svg" alt="" srcset="">
+                        <span>Structure your pointers</span>
+                    </li>
+                    <li>
+                        <img src="./assets/blackDots.svg" alt="" srcset="">
+                        <span>4SA Method</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- MAIN HEADING -->
+        <div class="heading-main">
+            <h2 id="main_heading"></h2>
+            <button>Submit Task</button>
+        </div>
+
+        <!-- TITLE AND DESCRIPTION -->
+        <div class="explore-box">
+            <div class="explore-box-inner">
+                <h2 id="main_title">Explore the world of management</h2>
+                <p id="main_desc">As a project manager, you play an important reole in leading a project through
+                    initiation, planning,
+                    execution, monitoring, controlling and completion. How? Do you want to manage each and every step of
+                    your life?</p>
+            </div>
+        </div>
+
+
+        <!-- cards -->
+        <div class="cards">
+        </div>
+
+        <div class="notice">
+
+            <div>
+                <img src="./assets/cross.svg" alt="">
+
+                <div>
+                    <p>N</p>
+                    <p>o</p>
+                    <p>t</p>
+                    <p>i</p>
+                    <p>c</p>
+                    <p>e</p>
+                </div>
+
+                <div>
+                    <p>B</p>
+                    <p>o</p>
+                    <p>a</p>
+                    <p>r</p>
+                    <p>d</p>
+                </div>
+
+            </div>
+
+            <div></div>
+        </div>
+
+
+        <div class="bigIcons">
+            <img src="./assets/questionCircle.svg" alt="">
+            <img src="./assets/meetCircle.svg" alt="">
+            <img src="./assets/dateCircle.svg" alt="">
+        </div>
+
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
