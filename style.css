@@ -846,7 +846,7 @@ main .heading-main h2 {
     }
 
     .explore-box{
-        height: 250px;
+        height: fit-content;
         padding: 10px;
     }
 

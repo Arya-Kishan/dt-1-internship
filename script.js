@@ -6,20 +6,17 @@ const fetchData = async () => {
     let res = await fetch("data.json");
     res = await res.json();
 
-    const data = res.tasks[0].assets;
-    const title = res.tasks[0].task_title;
-    const desc = res.tasks[0].task_description;
-
     let main_heading = document.querySelector("#main_heading")
-    let main_title = document.querySelector("#main_title")
-    let main_desc = document.querySelector("#main_desc")
-
     main_heading.innerHTML = `${res.title}`
-    main_title.innerHTML = `${title}`
-    main_desc.innerHTML = `${desc}`
 
-    data.forEach(elem => {
-        console.log(elem);
+    let main_title = document.querySelector("#main_title")
+    main_title.innerHTML = `${res.tasks[0].task_title}`
+
+    let main_desc = document.querySelector("#main_desc")
+    main_desc.innerHTML = `${res.tasks[0].task_description}`
+
+
+    res.tasks[0].assets.forEach(elem => {
 
         // IMPLEMENTING JOURNEY BOARD CONTENTS DYNAMICALLY 1
         let journey_board_titles = document.querySelector(".journey-board-titles")
@@ -27,7 +24,8 @@ const fetchData = async () => {
         <img src="./assets/blackDots.svg" alt="" srcset="">
         <span>${elem.asset_title}</span>
         </li>`
-        // IMPLEMENTING JOURNEY BOARD CONTENTS DYNAMICALLY 2
+
+        // IMPLEMENTING JOURNEY BOARD CONTENTS DYNAMICALLY 2 - RESPONSIVE
         let journey_board_titles2 = document.querySelector(".journey-board-titles2")
 
         journey_board_titles2.innerHTML += `<li>
@@ -35,31 +33,24 @@ const fetchData = async () => {
             <span>${elem.asset_title}</span>
             </li>`
 
-
         // FIRST CHECKING THE TYPE OF ASSET THEN APPENDING RESPECTIVELY
         if (elem.asset_type == "display_asset" && elem.asset_content_type == "video") {
-            console.log("card 1 video youtbe");
             makeCard1(elem);
         }
 
         if (elem.asset_type == "input_asset" && elem.asset_content_type == "threadbuilder") {
-            console.log("card 2 thread BUILD");
             makeCard2(elem);
         }
 
         if (elem.asset_type == "input_asset" && elem.asset_content_type == "article") {
-            console.log("card 3 structure pointer");
             makeCard3(elem);
 
         }
 
         if (elem.asset_type == "display_asset" && elem.asset_content_type == "article") {
-            console.log("card 4 4SA METHID");
             makeCard4(elem);
 
         }
-
-
 
     });
 
@@ -69,51 +60,46 @@ fetchData();
 
 // FUNCTION TO MAKE TECHNICAL PROJECT MANAGEMETN CARD
 function makeCard1(detail) {
+    let div = document.createElement("div");
+    div.className = "technical-card card";
+    div.innerHTML += `
+    <div class="technical-card__heading card_heading">
+        <h2>${detail.asset_title}</h2>
+        <img src="./assets/info.svg" alt="">
+    </div>
 
-    cards.innerHTML += `<div class="technical-card card">
+    <div class="technical-card__description card__description">
+        <p>Description : <span>${detail.asset_description}</span></p>
+    </div>
 
-                <div class="technical-card__heading card_heading">
-                    <h2>${detail.asset_title}</h2>
-                    <img src="./assets/info.svg" alt="">
-                </div>
-
-                <div class="technical-card__description card__description">
-                    <p>Description : <span>${detail.asset_description}</span></p>
-                </div>
-
-                <iframe class="technical-card__youtube" width="560" height="315"
-                    src="${detail.asset_content}" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-            </div>`
-
+    <iframe class="technical-card__youtube" width="560" height="315"
+        src="${detail.asset_content}" title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    `
+    cards.append(div);
 }
 
 // FUNCTION TO MAKE CARD 2 THREAD BUILD ONE
 function makeCard2(detail) {
-    cards.innerHTML += `<div class="thread-card card">
-
-                <!-- heading info -->
+    let div = document.createElement("div");
+    div.className = "thread-card card";
+    div.innerHTML += `
                 <div class="technical-card__heading card_heading">
                     <h2>${detail.asset_title}</h2>
                     <img src="./assets/info.svg" alt="">
                 </div>
 
-                <!-- description -->
                 <div class="technical-card__description card__description">
                     <p>Description : <span>${detail.asset_description}</span></p>
                 </div>
 
-                <!-- arrow upper THREAD A -->
                 <div class="thread-heading">
                     <img src="./assets/upperArrow.svg" alt="">
                     <h1>Thread A</h1>
                 </div>
 
-                <!-- small cards sub thred sub intrepreation -->
                 <div class="thread-inner-cards">
-
                     <div class="sub-thread sub">
                         <h2>Sub Thread 1</h2>
                         <p><span>Enter Text Here</span></p>
@@ -126,7 +112,6 @@ function makeCard2(detail) {
 
                 </div>
 
-                <!-- icons and select tags -->
                 <div class="thread-card-icon-div">
 
                     <div class="thread-card-icons">
@@ -152,33 +137,32 @@ function makeCard2(detail) {
 
                 </div>
 
-                <!-- button blue sub-thred -->
                 <div class="thread-card-blue-button">
                     <span>+</span>
                     <span>Sub-thread</span>
                 </div>
 
-                <!-- ------ -->
                 <div class="thread-card-last-div">
                     <h2>Summary for Thread A</h2>
                     <p><span>Enter Text Here</span></p>
                 </div>
 
-            </div>`
+            `
+    cards.append(div);
 }
 
 // FUNCTION TO MAKE CARD 3 STRUCTURE POINTER ONE
 function makeCard3(detail) {
 
-    cards.innerHTML += `<div class="card card3">
+    let div = document.createElement("div");
+    div.className = "card card3";
+    div.innerHTML += `
 
-                <!-- heading info -->
                 <div class="card_heading">
                     <h2>${detail.asset_title}</h2>
                     <img src="./assets/info.svg" alt="">
                 </div>
 
-                <!-- description -->
                 <div class="card__description card3-desc">
                     <p>Description : <span>${detail.asset_description}</span></p>
                 </div>
@@ -200,7 +184,6 @@ function makeCard3(detail) {
 
                         <div class="card3-content-box-1">
 
-                            <!-- texts -->
                             <div>
                                 <span>File</span>
                                 <span>Edit</span>
@@ -212,7 +195,6 @@ function makeCard3(detail) {
                                 <span>Help</span>
                             </div>
 
-                            <!-- images -->
                             <div>
                                 <img src="./assets/leftArrow.svg" alt="" srcset="">
                                 <img src="./assets/rightArrow.svg" alt="" srcset="">
@@ -229,17 +211,18 @@ function makeCard3(detail) {
                     </div>
 
                 </div>
-
-
-            </div>`
-
+`
+    cards.append(div)
 }
 
 
 // FUNCTION TO MAKE CARD 4 4SA METHOD ONE
 function makeCard4(detail) {
 
-    cards.innerHTML += ` <div class="card card3">
+    let div = document.createElement("div");
+    div.className = "card card3";
+
+    div.innerHTML += `
 
                 <!-- heading info -->
                 <div class="card_heading">
@@ -291,10 +274,10 @@ function makeCard4(detail) {
 
                 </div>
 
-            </div>`
+            `
+    cards.append(div)
+
 }
-
-
 
 
 
