@@ -57,6 +57,15 @@ nav button {
 }
 
 
+.hamburger {
+    display: none;
+}
+
+.nav-icons-2 {
+    display: none;
+}
+
+
 /* ------------------------------------ */
 
 main {
@@ -174,9 +183,14 @@ main {
     gap: 10px;
 }
 
+
 ul li img {
     width: 10px;
     height: 10px;
+}
+
+.journey-board2_2,.pop{
+    display: none;
 }
 
 
@@ -802,4 +816,227 @@ main .heading-main h2 {
     position: absolute;
     right: 52px;
     bottom: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------ RESPONSIVE--------------------------------------------- */
+
+@media only screen and (max-width: 1220px) {
+
+    main {
+        padding: 0 10px;
+    }
+
+    .explore-box,.explore-box-inner,.explore-box-inner h2,.explore-box-inner p{
+        width: 100%;
+        height: 100%;
+    }
+
+    .explore-box{
+        height: 250px;
+        padding: 10px;
+    }
+
+    .heading-main {
+        width: auto;
+        height: 120px;
+    }
+
+    main .heading-main h2 {
+        height: auto;
+    }
+
+    .heading-main button {
+        display: none;
+    }
+
+    nav {
+        height: 60px;
+    }
+
+    .hamburger {
+        display: flex;
+        margin-right: 20px;
+    }
+
+    nav .nav-icons {
+        display: none;
+    }
+
+    nav .nav-icons-2 {
+        width: fit-content;
+        height: fit-content;
+        padding: 20px;
+        display: none;
+        gap: 10px;
+        flex-direction: column;
+        z-index: 10;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: white;
+    }
+
+    .journey-board {
+        display: none;
+    }
+
+    .journey-board2_2 {
+        padding: 10px;
+        position: fixed;
+        bottom: -60vh;
+        left: 0;
+        z-index: 10;
+        height: 60vh;
+        width: 100%;
+        background-color: white;
+        transition: all;
+        transition-duration: 1s;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        box-shadow: 0 0 5px 4px black;
+    }
+
+    .journey-board2_2 div img {
+        transform: rotate(90deg);
+    }
+
+    .pop {
+        display: flex;
+        position: fixed;
+        bottom: 20px;
+        right: 10px;
+        z-index: 20;
+    }
+
+    nav .nav-icons-2 img {
+        width: 30px;
+        height: 32.37px;
+    }
+
+    nav .logo {
+        margin-left: 10px;
+        width: fit-content;
+        height: fit-content;
+    }
+
+    nav .logo img {
+        width: 200px;
+    }
+
+    .notice {
+        display: none;
+    }
+
+    .cards {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .card_heading h2{
+        font-size: 12px;
+    }
+    .card {
+        width: 80vw;
+    }
+
+    .technical-card__youtube {
+        width: 100%;
+        aspect-ratio: 4/3;
+    }
+
+    .card__description {
+        width: 100%;
+    }
+
+
+    /* card 2  */
+    .thread-heading {
+        width: 100%;
+    }
+
+    .thread-card-last-div {
+        width: 70vw;
+        margin: auto;
+        margin-top: 10px;
+    }
+
+
+    /* card 3 */
+    .card3 {
+        height: fit-content;
+    }
+
+    .card3-box {
+        width: 100%;
+    }
+
+    .card3-title-box {
+        width: 95%;
+    }
+
+    .card3-content-box,
+    .card3-content-box-1,
+    .card3-content-box-2 {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .card3-content-box-1 div {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /* card 4 */
+    .card4-box,
+    .card4-intro-box,
+    .card4-intro-box,
+    .card4-box-heading {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .card4-example-box {
+        margin-left: 0px;
+    }
+
+    .card4-example-box p:nth-child(1) {
+        width: 100%;
+    }
+
+    .bigIcons {
+        flex-direction: row;
+        right: 60%;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .sub {
+        width: 80%;
+    }
+
+    .sub-thread,
+    .thread-card-select {
+        display: none;
+    }
 }
